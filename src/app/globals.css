@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -163,10 +163,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background font-sans text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
 @utility container {
-  @apply max-w-7xl mx-auto px-4 2xl:px-0;
+  @apply mx-auto max-w-7xl px-4 2xl:px-0;
 }
