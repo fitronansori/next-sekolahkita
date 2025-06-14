@@ -92,3 +92,37 @@ export const tentang_sekolah_items = [
     description: 'Struktur kepemimpinan dan organisasi sekolah.',
   },
 ];
+
+// Hero carousel slides data
+export const hero_slides = [
+  {
+    id: 1,
+    title: 'Selamat Datang di Sekolah Kita',
+    subtitle: 'Membangun Generasi Unggul dan Berkarakter',
+    description:
+      'Bergabunglah dengan kami dalam menciptakan masa depan yang cerah melalui pendidikan berkualitas tinggi.',
+    image_url: '/images/slide1.jpg',
+    cta_text: 'Pelajari Lebih Lanjut',
+    cta_link: '/profil',
+  },
+  {
+    id: 2,
+    title: 'Fasilitas Modern & Lengkap',
+    subtitle: 'Lingkungan Belajar yang Mendukung',
+    description:
+      'Nikmati fasilitas pembelajaran modern dengan teknologi terdepan untuk mengoptimalkan potensi siswa.',
+    image_url: '/images/slide2.jpg',
+    cta_text: 'Lihat Fasilitas',
+    cta_link: '/fasilitas',
+  },
+  {
+    id: 3,
+    title: 'Prestasi & Pencapaian',
+    subtitle: 'Kebanggaan Sekolah Kita',
+    description:
+      'Berbagai prestasi akademik dan non-akademik yang membanggakan dari siswa-siswi berprestasi.',
+    image_url: '/images/slide3.jpg',
+    cta_text: 'Lihat Prestasi',
+    cta_link: '/akademik/prestasi',
+  },
+];
