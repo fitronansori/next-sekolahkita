@@ -1,3 +1,10 @@
+import {
+  BookOpenIcon,
+  BuildingIcon,
+  TrophyIcon,
+  UsersIcon,
+} from 'lucide-react';
+
 export const program_akademik: {
   title: string;
   href: string;
@@ -124,5 +131,69 @@ export const hero_slides = [
     image_url: '/images/slide3.jpg',
     cta_text: 'Lihat Prestasi',
     cta_link: '/akademik/prestasi',
+  },
+];
+
+// Features data using underscore field_names as per instructions
+export const features_data = [
+  {
+    id: 1,
+    title: 'Program Akademik Unggulan',
+    description:
+      'Kurikulum terdepan yang mengintegrasikan pendidikan karakter dengan kemajuan teknologi modern untuk mempersiapkan siswa menghadapi tantangan masa depan.',
+    icon: BookOpenIcon,
+    cta_text: 'Lihat Program',
+    cta_link: '/akademik/kurikulum',
+    highlights: [
+      'Kurikulum Merdeka',
+      'Pembelajaran Digital',
+      'Kelas Internasional',
+      'Program Akselerasi',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Fasilitas Modern & Lengkap',
+    description:
+      'Lingkungan belajar yang nyaman dengan fasilitas berstandar internasional untuk mendukung proses pembelajaran yang optimal dan menyenangkan.',
+    icon: BuildingIcon,
+    cta_text: 'Jelajahi Fasilitas',
+    cta_link: '/fasilitas',
+    highlights: [
+      'Lab Komputer',
+      'Perpustakaan Digital',
+      'Ruang Multimedia',
+      'Arena Olahraga',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Tenaga Pendidik Berkualitas',
+    description:
+      'Tim guru profesional dan berpengalaman yang berkomitmen penuh dalam mengembangkan potensi akademik dan karakter setiap siswa.',
+    icon: UsersIcon,
+    cta_text: 'Profil Guru',
+    cta_link: '/guru',
+    highlights: [
+      'S1 & S2 Bersertifikat',
+      'Pengalaman >10 Tahun',
+      'Pelatihan Berkala',
+      'Metode Inovatif',
+    ],
+  },
+  {
+    id: 4,
+    title: 'Prestasi & Pencapaian',
+    description:
+      'Track record gemilang dalam berbagai kompetisi akademik dan non-akademik di tingkat regional, nasional, bahkan internasional.',
+    icon: TrophyIcon,
+    cta_text: 'Lihat Prestasi',
+    cta_link: '/akademik/prestasi',
+    highlights: [
+      'Juara OSN',
+      'Lomba Sains',
+      'Kompetisi Internasional',
+      'Beasiswa Prestasi',
+    ],
   },
 ];
