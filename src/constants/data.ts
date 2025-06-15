@@ -284,3 +284,197 @@ export const latest_announcements = [
     is_urgent: false,
   },
 ];
+
+// Teachers data using underscore field_names as per instructions
+
+export const teachers_data = [
+  {
+    id: 1,
+    name: "Dr. Siti Nurhaliza, M.Pd",
+    position: "Kepala Sekolah",
+    subject: "Manajemen Pendidikan",
+    experience_years: 15,
+    education: "S2 Manajemen Pendidikan - Universitas Pendidikan Indonesia",
+    specialization: [
+      "Kepemimpinan Pendidikan",
+      "Kurikulum Merdeka",
+      "Manajemen Sekolah",
+    ],
+    photo_url: "/images/profile.jpg",
+    email: "kepala@sekolahkita.ac.id",
+    bio: "Berpengalaman lebih dari 15 tahun dalam dunia pendidikan dengan fokus pada pengembangan kurikulum dan kepemimpinan sekolah.",
+    achievements: [
+      "Guru Berprestasi Nasional 2020",
+      "Sertifikat ISO 9001:2015",
+      "Pelatihan Kepemimpinan Harvard",
+    ],
+  },
+  {
+    id: 2,
+    name: "Ahmad Hidayat, S.Pd, M.Si",
+    position: "Wakil Kepala Sekolah",
+    subject: "Matematika",
+    experience_years: 12,
+    education: "S2 Pendidikan Matematika - Institut Teknologi Bandung",
+    specialization: [
+      "Matematika Terapan",
+      "Statistika",
+      "Olimpiade Matematika",
+    ],
+    photo_url: "/images/profile.jpg",
+    email: "wakasek@sekolahkita.ac.id",
+    bio: "Spesialis pendidikan matematika dengan track record membina siswa juara olimpiade tingkat nasional.",
+    achievements: [
+      "Pembina Tim Olimpiade Matematika",
+      "Penulis Buku Matematika SMA",
+      "Juara 1 Guru Inovatif 2021",
+    ],
+  },
+  {
+    id: 3,
+    name: "Dr. Fatimah Azzahra, M.Pd",
+    position: "Guru Senior",
+    subject: "Bahasa Indonesia",
+    experience_years: 18,
+    education: "S3 Pendidikan Bahasa - Universitas Gadjah Mada",
+    specialization: ["Sastra Indonesia", "Linguistik", "Penulisan Kreatif"],
+    photo_url: "/images/profile.jpg",
+    email: "fatimah@sekolahkita.ac.id",
+    bio: "Doktor pendidikan bahasa dengan pengalaman mengajar dan penelitian sastra Indonesia modern.",
+    achievements: [
+      "Penulis 5 Buku Sastra",
+      "Dosen Tamu Universitas",
+      "Peneliti Bahasa Nasional",
+    ],
+  },
+  {
+    id: 4,
+    name: "Ir. Bambang Sutrisno, M.T",
+    position: "Guru Senior",
+    subject: "Fisika",
+    experience_years: 14,
+    education: "S2 Teknik Fisika - Institut Teknologi Sepuluh Nopember",
+    specialization: ["Fisika Eksperimen", "Teknologi Pembelajaran", "Robotika"],
+    photo_url: "/images/profile.jpg",
+    email: "bambang@sekolahkita.ac.id",
+    bio: "Engineer yang beralih ke dunia pendidikan dengan keahlian dalam eksperimen fisika dan teknologi.",
+    achievements: [
+      "Pembina Klub Robotika",
+      "Inovator Lab Fisika Digital",
+      "Mentor Kompetisi Sains",
+    ],
+  },
+  {
+    id: 5,
+    name: "Maria Christina, S.Pd, M.Hum",
+    position: "Guru Senior",
+    subject: "Bahasa Inggris",
+    experience_years: 10,
+    education: "S2 Sastra Inggris - Universitas Indonesia",
+    specialization: [
+      "TOEFL/IELTS Preparation",
+      "English Literature",
+      "Cross-Cultural Communication",
+    ],
+    photo_url: "/images/profile.jpg",
+    email: "maria@sekolahkita.ac.id",
+    bio: "Spesialis bahasa Inggris dengan sertifikasi internasional dan pengalaman mengajar di berbagai negara.",
+    achievements: [
+      "TESOL Certified",
+      "English Camp Coordinator",
+      "International Exchange Program",
+    ],
+  },
+  {
+    id: 6,
+    name: "Dr. Handoko Wijaya, M.Pd",
+    position: "Guru Senior",
+    subject: "Kimia",
+    experience_years: 16,
+    education: "S3 Pendidikan Kimia - Universitas Negeri Malang",
+    specialization: [
+      "Kimia Analitik",
+      "Green Chemistry",
+      "Pembelajaran Inkuiri",
+    ],
+    photo_url: "/images/profile.jpg",
+    email: "handoko@sekolahkita.ac.id",
+    bio: "Doktor kimia dengan fokus penelitian pada green chemistry dan inovasi pembelajaran sains.",
+    achievements: [
+      "Peneliti Kimia Hijau",
+      "Pembina Lab Kimia Modern",
+      "Penulis Jurnal Internasional",
+    ],
+  },
+];
+
+// Footer data constants
+export const footer_quick_links = [
+  { name: "Profil Sekolah", href: "/profil" },
+  { name: "Visi & Misi", href: "/visi-misi" },
+  { name: "Fasilitas", href: "/fasilitas" },
+  { name: "Tenaga Pendidik", href: "/guru" },
+];
+
+export const footer_academic_links = [
+  { name: "Kurikulum", href: "/akademik/kurikulum" },
+  { name: "Jadwal Pelajaran", href: "/akademik/jadwal" },
+  { name: "Kalender Akademik", href: "/akademik/kalender" },
+  { name: "Prestasi Siswa", href: "/akademik/prestasi" },
+];
+
+export const footer_information_links = [
+  { name: "Berita Sekolah", href: "/berita" },
+  { name: "Pengumuman", href: "/pengumuman" },
+  { name: "Galeri Kegiatan", href: "/galeri" },
+  { name: "Ekstrakurikuler", href: "/ekstrakurikuler" },
+];
+
+export const footer_contact_info = [
+  {
+    type: "address",
+    text: "Jl. Pendidikan No. 123, Jakarta Selatan 12345",
+  },
+  {
+    type: "phone",
+    text: "+62 21 1234 5678",
+  },
+  {
+    type: "email",
+    text: "info@sekolahkita.ac.id",
+  },
+  {
+    type: "hours",
+    text: "Senin - Jumat: 07:00 - 16:00 WIB",
+  },
+];
+
+export const footer_social_media = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com/sekolahkita",
+    platform: "facebook",
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/sekolahkita",
+    platform: "instagram",
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@sekolahkita",
+    platform: "youtube",
+  },
+];
+
+export const footer_legal_links = [
+  { name: "Kebijakan Privasi", href: "/privacy-policy" },
+  { name: "Syarat & Ketentuan", href: "/terms-of-service" },
+  { name: "Peta Situs", href: "/sitemap" },
+];
+
+export const school_info = {
+  name: "Sekolah Kita",
+  description:
+    "Sekolah Kita berkomitmen memberikan pendidikan berkualitas tinggi dengan mengintegrasikan nilai-nilai karakter dan teknologi modern untuk mempersiapkan generasi unggul masa depan.",
+};
