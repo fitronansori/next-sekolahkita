@@ -45,7 +45,7 @@ const MobileMenu = () => {
           {/* Beranda */}
           <Link
             href="/"
-            className="text-foreground hover:bg-accent hover:text-accent-foreground block rounded-md px-3 py-2 text-sm font-medium transition-colors"
+            className="text-foreground hover:bg-accent hover:text-accent-foreground block rounded-md px-3 py-2 text-base font-medium transition-colors"
           >
             Beranda
           </Link>
@@ -54,7 +54,7 @@ const MobileMenu = () => {
             <Button
               variant="ghost"
               onClick={() => toggleSection("tentang")}
-              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-base font-medium transition-colors"
             >
               Tentang Sekolah
               <ChevronDownIcon
@@ -69,7 +69,7 @@ const MobileMenu = () => {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-base transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -82,7 +82,7 @@ const MobileMenu = () => {
             <Button
               variant="ghost"
               onClick={() => toggleSection("akademik")}
-              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-base font-medium transition-colors"
             >
               Program Akademik
               <ChevronDownIcon
@@ -97,7 +97,7 @@ const MobileMenu = () => {
                   <Link
                     key={program.title}
                     href={program.href}
-                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-base transition-colors"
                   >
                     {program.title}
                   </Link>
@@ -110,7 +110,7 @@ const MobileMenu = () => {
             <Button
               variant="ghost"
               onClick={() => toggleSection("informasi")}
-              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-base font-medium transition-colors"
             >
               Informasi
               <ChevronDownIcon
@@ -125,7 +125,7 @@ const MobileMenu = () => {
                   <Link
                     key={info.title}
                     href={info.href}
-                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-base transition-colors"
                   >
                     {info.title}
                   </Link>
@@ -138,7 +138,7 @@ const MobileMenu = () => {
             <Button
               variant="ghost"
               onClick={() => toggleSection("kegiatan")}
-              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              className="flex w-full items-center justify-between rounded-md px-4 py-2 text-base font-medium transition-colors"
             >
               Kegiatan
               <ChevronDownIcon
@@ -153,7 +153,7 @@ const MobileMenu = () => {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-4 py-2 text-base transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -164,7 +164,7 @@ const MobileMenu = () => {
           {/* Kontak */}
           <Link
             href="/kontak"
-            className="text-foreground hover:bg-accent hover:text-accent-foreground block rounded-md px-3 py-2 text-sm font-medium transition-colors"
+            className="text-foreground hover:bg-accent hover:text-accent-foreground block rounded-md px-3 py-2 text-base font-medium transition-colors"
           >
             Kontak
           </Link>
