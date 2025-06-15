@@ -1,13 +1,13 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from "lucide-react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { latest_announcements } from '@/constants/data';
+import { latest_announcements } from "@/constants/data";
 
-import AnnouncementCard from './AnnouncementCard';
+import AnnouncementCard from "./AnnouncementCard";
 
 const AnnouncementsSection = () => {
   return (

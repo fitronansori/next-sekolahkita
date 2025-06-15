@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
   link?: string;
@@ -12,17 +12,17 @@ type LogoProps = {
 };
 
 const Logo = ({
-  link = '/',
+  link = "/",
   width = 35,
   height = 35,
-  className = '',
+  className = "",
   show_text = true,
 }: LogoProps) => {
   return (
     <Link
       href={link}
       className={cn(
-        'flex items-center gap-3 transition-opacity duration-200 hover:opacity-80',
+        "flex items-center gap-3 transition-opacity duration-200 hover:opacity-80",
         className
       )}
     >

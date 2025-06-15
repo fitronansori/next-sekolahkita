@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import SectionHeader from '@/components/common/SectionHeader';
-import FeatureStats from '@/components/layouts/root/Features/FeatureStats';
-import { Button } from '@/components/ui/button';
+import SectionHeader from "@/components/common/SectionHeader";
+import FeatureStats from "@/components/layouts/root/Features/FeatureStats";
+import { Button } from "@/components/ui/button";
 
-import { features_data } from '@/constants/data';
+import { features_data } from "@/constants/data";
 
-import FeatureCard from './FeatureCard';
+import FeatureCard from "./FeatureCard";
 
 const Features = () => {
   return (

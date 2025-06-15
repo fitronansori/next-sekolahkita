@@ -1,15 +1,15 @@
-import { ArrowRightIcon, LucideIcon } from 'lucide-react';
+import { ArrowRightIcon, LucideIcon } from "lucide-react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 
 interface FeatureCardProps {
   id: number;

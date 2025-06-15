@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { AlignJustifyIcon, ChevronDownIcon } from 'lucide-react';
+import { AlignJustifyIcon, ChevronDownIcon } from "lucide-react";
 
-import Link from 'next/link';
-import * as React from 'react';
+import Link from "next/link";
+import * as React from "react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -13,14 +13,14 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
+} from "@/components/ui/sheet";
 
 import {
   info_sekolah,
   kegiatan_items,
   program_akademik,
   tentang_sekolah_items,
-} from '@/constants/data';
+} from "@/constants/data";
 
 const MobileMenu = () => {
   const [open_section, setOpenSection] = React.useState<string | null>(null);
@@ -53,17 +53,17 @@ const MobileMenu = () => {
           <div>
             <Button
               variant="ghost"
-              onClick={() => toggleSection('tentang')}
+              onClick={() => toggleSection("tentang")}
               className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
             >
               Tentang Sekolah
               <ChevronDownIcon
                 className={`h-4 w-4 transition-transform ${
-                  open_section === 'tentang' ? 'rotate-180' : ''
+                  open_section === "tentang" ? "rotate-180" : ""
                 }`}
               />
             </Button>
-            {open_section === 'tentang' && (
+            {open_section === "tentang" && (
               <div className="mt-2 ml-4 space-y-2">
                 {tentang_sekolah_items.map((item) => (
                   <Link
@@ -81,17 +81,17 @@ const MobileMenu = () => {
           <div>
             <Button
               variant="ghost"
-              onClick={() => toggleSection('akademik')}
+              onClick={() => toggleSection("akademik")}
               className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
             >
               Program Akademik
               <ChevronDownIcon
                 className={`h-4 w-4 transition-transform ${
-                  open_section === 'akademik' ? 'rotate-180' : ''
+                  open_section === "akademik" ? "rotate-180" : ""
                 }`}
               />
             </Button>
-            {open_section === 'akademik' && (
+            {open_section === "akademik" && (
               <div className="mt-2 ml-4 space-y-2">
                 {program_akademik.map((program) => (
                   <Link
@@ -109,17 +109,17 @@ const MobileMenu = () => {
           <div>
             <Button
               variant="ghost"
-              onClick={() => toggleSection('informasi')}
+              onClick={() => toggleSection("informasi")}
               className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
             >
               Informasi
               <ChevronDownIcon
                 className={`h-4 w-4 transition-transform ${
-                  open_section === 'informasi' ? 'rotate-180' : ''
+                  open_section === "informasi" ? "rotate-180" : ""
                 }`}
               />
             </Button>
-            {open_section === 'informasi' && (
+            {open_section === "informasi" && (
               <div className="mt-2 ml-4 space-y-2">
                 {info_sekolah.map((info) => (
                   <Link
@@ -137,17 +137,17 @@ const MobileMenu = () => {
           <div>
             <Button
               variant="ghost"
-              onClick={() => toggleSection('kegiatan')}
+              onClick={() => toggleSection("kegiatan")}
               className="flex w-full items-center justify-between rounded-md px-4 py-2 text-sm font-medium transition-colors"
             >
               Kegiatan
               <ChevronDownIcon
                 className={`h-4 w-4 transition-transform ${
-                  open_section === 'kegiatan' ? 'rotate-180' : ''
+                  open_section === "kegiatan" ? "rotate-180" : ""
                 }`}
               />
             </Button>
-            {open_section === 'kegiatan' && (
+            {open_section === "kegiatan" && (
               <div className="mt-2 ml-4 space-y-2">
                 {kegiatan_items.map((item) => (
                   <Link

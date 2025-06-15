@@ -1,10 +1,10 @@
-import { Megaphone, Newspaper } from 'lucide-react';
+import { Megaphone, Newspaper } from "lucide-react";
 
-import SectionHeader from '@/components/common/SectionHeader';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import SectionHeader from "@/components/common/SectionHeader";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import AnnouncementsSection from './AnnouncementsSection';
-import NewsSection from './NewsSection';
+import AnnouncementsSection from "./AnnouncementsSection";
+import NewsSection from "./NewsSection";
 
 const NewsAndAnnouncements = () => {
   return (

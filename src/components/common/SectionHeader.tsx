@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
   title: string;
@@ -34,10 +34,10 @@ const SectionHeader = ({
   };
 
   return (
-    <div className={cn('', center && 'text-center', className)}>
+    <div className={cn("", center && "text-center", className)}>
       <h2
         className={cn(
-          'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
+          "mb-4 text-3xl font-bold tracking-tight sm:text-4xl",
           title_class_name
         )}
       >
@@ -46,7 +46,7 @@ const SectionHeader = ({
       {description && (
         <p
           className={cn(
-            'text-muted-foreground mx-auto max-w-2xl text-lg',
+            "text-muted-foreground mx-auto max-w-2xl text-lg",
             description_class_name
           )}
         >

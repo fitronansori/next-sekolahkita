@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 import {
   NavigationMenu,
@@ -9,14 +9,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
 
 import {
   info_sekolah,
   kegiatan_items,
   program_akademik,
   tentang_sekolah_items,
-} from '@/constants/data';
+} from "@/constants/data";
 
 interface NavLinksProps {
   className?: string;
@@ -125,7 +125,7 @@ const ListItem = ({
   children,
   href,
   ...props
-}: React.ComponentProps<'a'> & {
+}: React.ComponentProps<"a"> & {
   title: string;
   href: string;
 }) => {
@@ -135,7 +135,7 @@ const ListItem = ({
         <Link
           href={href}
           className={cn(
-            'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none',
+            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none",
             className
           )}
           {...props}

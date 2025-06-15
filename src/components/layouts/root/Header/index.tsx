@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Logo from '@/components/common/Logo';
-import MobileMenu from '@/components/layouts/root/Header/MobileMenu';
-import NavLinks from '@/components/layouts/root/Header/NavLinks';
-import { Button } from '@/components/ui/button';
+import Logo from "@/components/common/Logo";
+import MobileMenu from "@/components/layouts/root/Header/MobileMenu";
+import NavLinks from "@/components/layouts/root/Header/NavLinks";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const login = true;

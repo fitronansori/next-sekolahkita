@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import Autoplay from 'embla-carousel-autoplay';
-import { ArrowRightIcon } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay";
+import { ArrowRightIcon } from "lucide-react";
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from "@/components/ui/carousel";
 
-import { hero_slides } from '@/constants/data';
+import { hero_slides } from "@/constants/data";
 
 const Hero = () => {
   return (
     <section className="relative w-full">
       <Carousel
         opts={{
-          align: 'start',
+          align: "start",
           loop: true,
         }}
         plugins={[
@@ -61,7 +61,7 @@ const Hero = () => {
                         {slide.description}
                       </p>
 
-                      <Button size={'lg'} asChild>
+                      <Button size={"lg"} asChild>
                         <Link href={slide.cta_link}>
                           {slide.cta_text} <ArrowRightIcon className="size-5" />
                         </Link>
