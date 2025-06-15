@@ -197,3 +197,90 @@ export const features_data = [
     ],
   },
 ];
+
+// News and announcements data using underscore field_names
+export const latest_news = [
+  {
+    id: 1,
+    title: 'Penerimaan Siswa Baru Tahun Ajaran 2025/2026',
+    excerpt:
+      'Pendaftaran siswa baru telah dibuka dengan berbagai program unggulan dan fasilitas modern yang menunjang pembelajaran.',
+    category: 'Pendaftaran',
+    date: '2024-12-15',
+    author: 'Admin Sekolah',
+    image_url: '/images/slide1.jpg',
+    slug: 'penerimaan-siswa-baru-2025-2026',
+    is_featured: true,
+  },
+  {
+    id: 2,
+    title: 'Prestasi Gemilang Tim Olimpiade Sains Nasional',
+    excerpt:
+      'Siswa-siswi kami berhasil meraih medali emas dan perak dalam kompetisi Olimpiade Sains Nasional tingkat provinsi.',
+    category: 'Prestasi',
+    date: '2024-12-10',
+    author: 'Tim Akademik',
+    image_url: '/images/slide2.jpg',
+    slug: 'prestasi-olimpiade-sains-nasional',
+    is_featured: false,
+  },
+  {
+    id: 3,
+    title: 'Kegiatan Bakti Sosial Peduli Lingkungan',
+    excerpt:
+      'Program CSR sekolah dalam kegiatan pembersihan lingkungan dan penanaman pohon untuk mendukung kelestarian alam.',
+    category: 'Kegiatan',
+    date: '2024-12-08',
+    author: 'OSIS',
+    image_url: '/images/slide3.jpg',
+    slug: 'bakti-sosial-peduli-lingkungan',
+    is_featured: false,
+  },
+];
+
+export const latest_announcements = [
+  {
+    id: 1,
+    title: 'Jadwal Ujian Tengah Semester Genap 2024/2025',
+    content:
+      'Ujian Tengah Semester akan dilaksanakan pada tanggal 3-7 Februari 2025. Seluruh siswa diharapkan mempersiapkan diri dengan baik.',
+    category: 'Akademik',
+    priority: 'high',
+    date: '2024-12-20',
+    valid_until: '2025-02-07',
+    is_urgent: true,
+  },
+  {
+    id: 2,
+    title: 'Libur Semester dan Tahun Baru 2025',
+    content:
+      'Libur semester dan tahun baru dimulai tanggal 23 Desember 2024 hingga 6 Januari 2025. Masuk kembali tanggal 7 Januari 2025.',
+    category: 'Umum',
+    priority: 'medium',
+    date: '2024-12-18',
+    valid_until: '2025-01-07',
+    is_urgent: false,
+  },
+  {
+    id: 3,
+    title: 'Pendaftaran Ekstrakurikuler Semester Genap',
+    content:
+      'Pendaftaran kegiatan ekstrakurikuler semester genap dibuka mulai tanggal 8-15 Januari 2025 melalui portal siswa.',
+    category: 'Ekstrakurikuler',
+    priority: 'medium',
+    date: '2024-12-16',
+    valid_until: '2025-01-15',
+    is_urgent: false,
+  },
+  {
+    id: 4,
+    title: 'Rapat Orang Tua Siswa Kelas XII',
+    content:
+      'Mengundang seluruh orang tua siswa kelas XII untuk rapat persiapan ujian nasional pada Sabtu, 11 Januari 2025 pukul 08.00 WIB.',
+    category: 'Orang Tua',
+    priority: 'high',
+    date: '2024-12-14',
+    valid_until: '2025-01-11',
+    is_urgent: false,
+  },
+];
