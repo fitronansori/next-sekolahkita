@@ -1,3 +1,5 @@
+import { ClerkProvider } from "@clerk/nextjs";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -22,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased", inter.variable)}>{children}</body>
+      <ClerkProvider>
+        <body className={cn("antialiased", inter.variable)}>{children}</body>
+      </ClerkProvider>
     </html>
   );
 }

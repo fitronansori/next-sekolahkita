@@ -1,3 +1,5 @@
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+
 import Link from "next/link";
 
 import Logo from "@/components/common/Logo";
@@ -6,8 +8,6 @@ import NavLinks from "@/components/layouts/root/Header/NavLinks";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const login = true;
-
   return (
     <header className="bg-background sticky top-0 z-50 w-full border-b">
       <div className="container flex h-16 items-center justify-between">
@@ -20,15 +20,21 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {login ? (
-            <Button variant="outline" asChild>
-              <Link href="/dashboard">Dashboard</Link>
-            </Button>
-          ) : (
+          <SignedIn>
+            <div className="flex items-center gap-4">
+              <Button variant="outline" asChild>
+                <Link href="/dashboard">Dashboard</Link>
+              </Button>
+
+              <UserButton />
+            </div>
+          </SignedIn>
+
+          <SignedOut>
             <Button asChild>
-              <Link href="/login">Login</Link>
+              <Link href="/sign-in">Login</Link>
             </Button>
-          )}
+          </SignedOut>
 
           <MobileMenu />
         </div>
