@@ -29,7 +29,6 @@ const TeachersSection = () => {
             className="shadow-md transition-shadow hover:shadow-lg"
           >
             <CardContent className="p-6">
-              {" "}
               <div className="mb-4 text-center">
                 <div className="mx-auto mb-3 h-20 w-20 overflow-hidden rounded-full bg-blue-100">
                   {teacher.photo_url ? (

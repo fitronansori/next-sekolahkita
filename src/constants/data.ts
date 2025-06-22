@@ -1,7 +1,17 @@
 import {
+  BarChart3,
+  BookOpen,
   BookOpenIcon,
   BuildingIcon,
+  Calendar,
+  FileText,
+  GraduationCap,
+  Home,
+  MessageSquare,
+  NewspaperIcon,
+  School,
   TrophyIcon,
+  Users,
   UsersIcon,
 } from "lucide-react";
 
@@ -478,3 +488,114 @@ export const school_info = {
   description:
     "Sekolah Kita berkomitmen memberikan pendidikan berkualitas tinggi dengan mengintegrasikan nilai-nilai karakter dan teknologi modern untuk mempersiapkan generasi unggul masa depan.",
 };
+
+export const sidebar_menu_items = [
+  {
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: Home,
+  },
+  {
+    title: "Siswa",
+    url: "/dashboard/students",
+    icon: Users,
+    sub_items: [
+      {
+        title: "Daftar Siswa",
+        url: "/dashboard/students",
+      },
+      {
+        title: "Tambah Siswa",
+        url: "/dashboard/students/add",
+      },
+      {
+        title: "Kehadiran",
+        url: "/dashboard/students/attendance",
+      },
+    ],
+  },
+  {
+    title: "Guru",
+    url: "/dashboard/teachers",
+    icon: GraduationCap,
+    sub_items: [
+      {
+        title: "Daftar Guru",
+        url: "/dashboard/teachers",
+      },
+      {
+        title: "Tambah Guru",
+        url: "/dashboard/teachers/add",
+      },
+    ],
+  },
+  {
+    title: "Mata Pelajaran",
+    url: "/dashboard/subjects",
+    icon: BookOpen,
+    sub_items: [
+      {
+        title: "Daftar Mapel",
+        url: "/dashboard/subjects",
+      },
+      {
+        title: "Tambah Mapel",
+        url: "/dashboard/subjects/add",
+      },
+    ],
+  },
+  {
+    title: "Kelas",
+    url: "/dashboard/classes",
+    icon: School,
+    sub_items: [
+      {
+        title: "Daftar Kelas",
+        url: "/dashboard/classes",
+      },
+      {
+        title: "Tambah Kelas",
+        url: "/dashboard/classes/add",
+      },
+    ],
+  },
+  {
+    title: "Jadwal",
+    url: "/dashboard/schedule",
+    icon: Calendar,
+  },
+  {
+    title: "Nilai",
+    url: "/dashboard/grades",
+    icon: BarChart3,
+  },
+  {
+    title: "Laporan",
+    url: "/dashboard/reports",
+    icon: FileText,
+  },
+  {
+    title: "Pengumuman",
+    url: "/dashboard/announcements",
+    icon: MessageSquare,
+  },
+  {
+    title: "Artikel",
+    url: "/dashboard/articles",
+    icon: NewspaperIcon,
+    sub_items: [
+      {
+        title: "Daftar Artikel",
+        url: "/dashboard/articles",
+      },
+      {
+        title: "Tulis Artikel",
+        url: "/dashboard/articles/create",
+      },
+      {
+        title: "Kategori",
+        url: "/dashboard/articles/categories",
+      },
+    ],
+  },
+];
