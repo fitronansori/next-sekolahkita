@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import { toast } from "sonner";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -23,38 +24,44 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-import { createTeacher } from "@/actions/teacher-action";
+import { updateTeacher } from "@/actions/teacher-action";
 import { TeacherFormData, teacher_form_schema } from "@/constants/form-schemas";
+import { Teacher } from "@/types/teacher";
 
-const AddTeacherForm = () => {
+type EditTeacherFormProps = {
+  teacher: Teacher;
+};
+
+const EditTeacherForm = ({ teacher }: EditTeacherFormProps) => {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [newSpecialization, setNewSpecialization] = useState("");
-  const [newAchievement, setNewAchievement] = useState("");
-
+  const [new_specialization, setNewSpecialization] = useState("");
+  const [new_achievement, setNewAchievement] = useState("");
   const form = useForm<TeacherFormData>({
     resolver: zodResolver(teacher_form_schema),
     defaultValues: {
-      name: "",
-      email: "",
-      position: "",
-      subject: "",
-      experience_years: undefined,
-      education: "",
-      specialization: [],
-      image_url: "",
-      bio: "",
-      achievements: [],
+      name: teacher?.name || "",
+      email: teacher?.email || "",
+      position: teacher?.position || "",
+      subject: teacher?.subject || "",
+      experience_years: teacher?.experience_years || undefined,
+      education: teacher?.education || "",
+      specialization: teacher?.specialization || [],
+      image_url: teacher?.image_url || "",
+      bio: teacher?.bio || "",
+      achievements: teacher?.achievements || [],
     },
   });
-  const addSpecialization = () => {
-    if (newSpecialization.trim()) {
-      const currentSpecializations = form.getValues("specialization");
-      const trimmedSpec = newSpecialization.trim();
+
+  const add_specialization = () => {
+    if (new_specialization.trim()) {
+      const current_specializations = form.getValues("specialization");
+      const trimmed_spec = new_specialization.trim();
       // Check for duplicates
-      if (!currentSpecializations.includes(trimmedSpec)) {
+      if (!current_specializations.includes(trimmed_spec)) {
         form.setValue("specialization", [
-          ...currentSpecializations,
-          trimmedSpec,
+          ...current_specializations,
+          trimmed_spec,
         ]);
         setNewSpecialization("");
       } else {
@@ -63,20 +70,21 @@ const AddTeacherForm = () => {
     }
   };
 
-  const removeSpecialization = (index: number) => {
-    const currentSpecializations = form.getValues("specialization");
-    const updated = currentSpecializations.filter((_, i) => i !== index);
+  const remove_specialization = (index: number) => {
+    const current_specializations = form.getValues("specialization");
+    const updated = current_specializations.filter((_, i) => i !== index);
     form.setValue("specialization", updated);
   };
 
-  const addAchievement = () => {
-    if (newAchievement.trim()) {
-      const currentAchievements = form.getValues("achievements");
-      const trimmedAchievement = newAchievement.trim(); // Check for duplicates
-      if (!currentAchievements.includes(trimmedAchievement)) {
+  const add_achievement = () => {
+    if (new_achievement.trim()) {
+      const current_achievements = form.getValues("achievements");
+      const trimmed_achievement = new_achievement.trim();
+      // Check for duplicates
+      if (!current_achievements.includes(trimmed_achievement)) {
         form.setValue("achievements", [
-          ...currentAchievements,
-          trimmedAchievement,
+          ...current_achievements,
+          trimmed_achievement,
         ]);
         setNewAchievement("");
       } else {
@@ -85,29 +93,29 @@ const AddTeacherForm = () => {
     }
   };
 
-  const removeAchievement = (index: number) => {
-    const currentAchievements = form.getValues("achievements");
-    const updated = currentAchievements.filter((_, i) => i !== index);
+  const remove_achievement = (index: number) => {
+    const current_achievements = form.getValues("achievements");
+    const updated = current_achievements.filter((_, i) => i !== index);
     form.setValue("achievements", updated);
   };
-
   async function onSubmit(data: TeacherFormData) {
     setIsSubmitting(true);
     try {
-      const result = await createTeacher({
+      const result = await updateTeacher({
+        id: teacher.id,
         ...data,
-        experience_years: data.experience_years || undefined,
-        image_url: data.image_url || undefined,
-        position: data.position || undefined,
-        subject: data.subject || undefined,
-        education: data.education || undefined,
-        bio: data.bio || undefined,
+        experience_years: data.experience_years || null,
+        image_url: data.image_url || null,
+        position: data.position || null,
+        subject: data.subject || null,
+        education: data.education || null,
+        bio: data.bio || null,
       });
       if (result.success) {
-        form.reset();
-        toast.success("Data guru berhasil disimpan ke dalam sistem.");
+        toast.success("Data guru berhasil diperbarui dalam sistem.");
+        router.push("/dashboard/teachers");
       } else {
-        toast.error(`Gagal menyimpan data guru: ${result.error}`);
+        toast.error(`Gagal memperbarui data guru: ${result.error}`);
       }
     } catch (error) {
       console.error("Unexpected error:", error);
@@ -126,6 +134,7 @@ const AddTeacherForm = () => {
           {/* Basic Information */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Informasi Dasar</h3>
+
             <FormField
               control={form.control}
               name="name"
@@ -142,6 +151,7 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="email"
@@ -159,6 +169,7 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="position"
@@ -175,6 +186,7 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="subject"
@@ -191,6 +203,7 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="experience_years"
@@ -201,26 +214,18 @@ const AddTeacherForm = () => {
                     <Input
                       type="number"
                       placeholder="0"
-                      min="0"
-                      max="50"
                       {...field}
                       onChange={(e) => {
                         const value = e.target.value;
-                        field.onChange(
-                          value === "" ? undefined : parseInt(value, 10)
-                        );
+                        field.onChange(value ? parseInt(value, 10) : undefined);
                       }}
-                      value={field.value || ""}
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          </div>
-          {/* Professional Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Informasi Profesional</h3>
+
             <FormField
               control={form.control}
               name="education"
@@ -237,6 +242,11 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+          </div>
+          {/* Profile Image */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Foto Profil</h3>
+
             <FormField
               control={form.control}
               name="image_url"
@@ -254,12 +264,11 @@ const AddTeacherForm = () => {
                             fill
                             className="rounded-lg object-cover"
                           />
-
                           <Button
                             type="button"
-                            size={"icon"}
+                            size="icon"
                             onClick={() => field.onChange("")}
-                            variant={"destructive"}
+                            variant="destructive"
                             className="absolute -top-2 -right-2 rounded-full"
                           >
                             <X size={16} />
@@ -272,11 +281,15 @@ const AddTeacherForm = () => {
                         onClientUploadComplete={(res) => {
                           if (res && res[0]) {
                             field.onChange(res[0].ufsUrl);
+                            toast.success(
+                              "Gambar profil berhasil diunggah ke sistem."
+                            );
                           }
                         }}
                         onUploadError={(error: Error) => {
-                          console.error("Upload error:", error);
-                          toast.error(`Upload error: ${error.message}`);
+                          toast.error(
+                            `Gagal mengunggah gambar: ${error.message}`
+                          );
                         }}
                       />
                     </div>
@@ -285,6 +298,47 @@ const AddTeacherForm = () => {
                 </FormItem>
               )}
             />
+          </div>
+          {/* Specializations */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Bidang Spesialisasi</h3>
+            <div className="flex gap-2">
+              <Input
+                placeholder="Tambahkan bidang spesialisasi"
+                value={new_specialization}
+                onChange={(e) => setNewSpecialization(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    add_specialization();
+                  }
+                }}
+              />
+              <Button type="button" onClick={add_specialization}>
+                Tambahkan
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {form.watch("specialization").map((spec, index) => (
+                <Badge key={index} variant="secondary" className="text-sm">
+                  {spec}
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="ml-1 h-auto p-0"
+                    onClick={() => remove_specialization(index)}
+                  >
+                    <X className="h-3 w-3" />
+                  </Button>
+                </Badge>
+              ))}
+            </div>
+          </div>
+          {/* Bio */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Profil Profesional</h3>
             <FormField
               control={form.control}
               name="bio"
@@ -303,97 +357,54 @@ const AddTeacherForm = () => {
               )}
             />
           </div>
-          {/* Specializations */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Bidang Spesialisasi</h3>
-            <div className="flex gap-2">
-              <Input
-                placeholder="Tambahkan bidang spesialisasi"
-                value={newSpecialization}
-                onChange={(e) => setNewSpecialization(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    addSpecialization();
-                  }
-                }}
-              />
-              <Button
-                type="button"
-                onClick={addSpecialization}
-                variant="outline"
-              >
-                Tambahkan
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {form.watch("specialization").map((spec, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="flex items-center gap-1 px-3 py-1"
-                >
-                  <span>{spec}</span>
-                  <button
-                    type="button"
-                    onClick={() => removeSpecialization(index)}
-                    className="text-muted-foreground hover:text-foreground ml-1"
-                  >
-                    <X size={14} />
-                  </button>
-                </Badge>
-              ))}
-            </div>
-          </div>
           {/* Achievements */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Prestasi dan Penghargaan</h3>
             <div className="flex gap-2">
               <Input
                 placeholder="Tambahkan prestasi atau penghargaan"
-                value={newAchievement}
+                value={new_achievement}
                 onChange={(e) => setNewAchievement(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
-                    addAchievement();
+                    add_achievement();
                   }
                 }}
               />
-              <Button type="button" onClick={addAchievement} variant="outline">
+              <Button type="button" onClick={add_achievement}>
                 Tambahkan
               </Button>
             </div>
+
             <div className="flex flex-wrap gap-2">
               {form.watch("achievements").map((achievement, index) => (
-                <Badge
-                  key={index}
-                  variant="outline"
-                  className="flex items-center gap-2 border-green-200 bg-green-50 px-3 py-1 text-green-800"
-                >
-                  <span>{achievement}</span>
-                  <button
+                <Badge key={index} variant="outline" className="text-sm">
+                  {achievement}
+                  <Button
                     type="button"
-                    onClick={() => removeAchievement(index)}
-                    className="ml-1 text-green-600 hover:text-green-800"
+                    variant="ghost"
+                    size="sm"
+                    className="ml-1 h-auto p-0"
+                    onClick={() => remove_achievement(index)}
                   >
-                    <X size={14} />
-                  </button>
+                    <X className="h-3 w-3" />
+                  </Button>
                 </Badge>
               ))}
             </div>
           </div>
-          <div className="flex gap-4 pt-4">
-            <Button type="submit" disabled={isSubmitting} className="flex-1">
-              {isSubmitting ? "Sedang Memproses..." : "Simpan Data Guru"}
+          <div className="flex gap-4 pt-6">
+            <Button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Sedang Memproses..." : "Simpan Perubahan"}
             </Button>
 
             <Button
               type="button"
               variant="outline"
-              onClick={() => form.reset()}
+              onClick={() => router.push("/dashboard/teachers")}
             >
-              Bersihkan Form
+              Batalkan
             </Button>
           </div>
         </form>
@@ -402,4 +413,4 @@ const AddTeacherForm = () => {
   );
 };
 
-export default AddTeacherForm;
+export default EditTeacherForm;

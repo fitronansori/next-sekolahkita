@@ -6,18 +6,20 @@ import { Button } from "@/components/ui/button";
 
 const EmptyTeacherState = () => {
   return (
-    <div className="py-8 text-center">
-      <User className="mx-auto mb-4 h-12 w-12 text-gray-400" />
-      <h3 className="mb-2 text-lg font-medium text-gray-900">
-        No teachers found
-      </h3>
-      <p className="mb-4 text-gray-500">Start by adding your first teacher.</p>
-      <Link href="/dashboard/teachers/add">
-        <Button>
+    <div className="space-y-4 py-8 text-center">
+      <User className="text-muted-foreground mx-auto size-12" />
+      <h3 className="mb-2 text-lg font-medium">Tidak ada guru ditemukan</h3>
+
+      <p className="text-muted-foreground">
+        Mulai dengan menambahkan guru pertama Anda.
+      </p>
+
+      <Button asChild>
+        <Link href="/dashboard/teachers/add">
           <Plus className="mr-2 h-4 w-4" />
-          Add Teacher
-        </Button>
-      </Link>
+          Tambah Guru
+        </Link>
+      </Button>
     </div>
   );
 };

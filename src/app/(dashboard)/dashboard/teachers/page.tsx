@@ -1,38 +1,41 @@
 import { Plus } from "lucide-react";
 
-import Link from "next/link";
 import { Suspense } from "react";
 
+import DashboardTitle from "@/components/common/DashboardTitle";
 import {
   TeacherList,
   TeacherListSkeleton,
+  TeacherSearch,
 } from "@/components/layouts/dashboard/Teachers";
-import { Button } from "@/components/ui/button";
 
-// Main Page Component
-const TeacherPage = () => {
+type TeacherPageProps = {
+  searchParams?: Promise<{
+    page?: string;
+    search?: string;
+  }>;
+};
+
+const TeacherPage = async ({ searchParams }: TeacherPageProps) => {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
   return (
     <div className="space-y-6 p-4">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Teachers</h1>
-          <p className="mt-1 text-gray-600">
-            Manage your school&apos;s teaching staff
-          </p>
-        </div>
-        <Button asChild>
-          <Link href="/dashboard/teachers/add">
-            <Plus />
-            Add Teacher
-          </Link>
-        </Button>
-      </div>
+      <DashboardTitle
+        title="Guru"
+        description="Kelola staf pengajar sekolah Anda"
+        action={{
+          label: "Tambah Guru",
+          href: "/dashboard/teachers/add",
+          icon: <Plus className="size-4" />,
+        }}
+      />
 
-      {/* Teacher List with Suspense for Streaming */}
-      <Suspense fallback={<TeacherListSkeleton />}>
-        <TeacherList />
-      </Suspense>
+      <div className="space-y-4">
+        <TeacherSearch />{" "}
+        <Suspense fallback={<TeacherListSkeleton />}>
+          <TeacherList searchParams={resolvedSearchParams} />
+        </Suspense>
+      </div>
     </div>
   );
 };

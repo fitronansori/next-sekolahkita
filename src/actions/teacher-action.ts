@@ -26,7 +26,10 @@ export async function createTeacher(data: CreateTeacherData) {
     return { success: true, data: teacher };
   } catch (error) {
     console.error("Error creating teacher:", error);
-    return { success: false, error: "Failed to create teacher" };
+    return {
+      success: false,
+      error: "Terjadi kesalahan saat menyimpan data guru. Silakan coba lagi.",
+    };
   }
 }
 
@@ -47,7 +50,10 @@ export async function updateTeacher(data: UpdateTeacherData) {
     return { success: true, data: teacher };
   } catch (error) {
     console.error("Error updating teacher:", error);
-    return { success: false, error: "Failed to update teacher" };
+    return {
+      success: false,
+      error: "Terjadi kesalahan saat memperbarui data guru. Silakan coba lagi.",
+    };
   }
 }
 
@@ -58,11 +64,16 @@ export async function deleteTeacher(id: string) {
         id,
       },
     });
-
     revalidatePath("/dashboard/teachers");
-    return { success: true, message: "Teacher deleted successfully" };
+    return {
+      success: true,
+      message: "Data guru telah berhasil dihapus dari sistem",
+    };
   } catch (error) {
     console.error("Error deleting teacher:", error);
-    return { success: false, error: "Failed to delete teacher" };
+    return {
+      success: false,
+      error: "Terjadi kesalahan saat menghapus data guru. Silakan coba lagi.",
+    };
   }
 }

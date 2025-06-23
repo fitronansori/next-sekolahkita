@@ -8,8 +8,10 @@ const TeacherListSkeleton = () => {
           <CardHeader>
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-full bg-gray-200" />
+
               <div>
                 <div className="mb-2 h-4 w-24 rounded bg-gray-200" />
+
                 <div className="h-3 w-32 rounded bg-gray-200" />
               </div>
             </div>
@@ -18,10 +20,14 @@ const TeacherListSkeleton = () => {
           <CardContent>
             <div className="space-y-3">
               <div className="h-3 w-20 rounded bg-gray-200" />
+
               <div className="h-6 w-16 rounded bg-gray-200" />
+
               <div className="h-3 w-28 rounded bg-gray-200" />
+
               <div className="flex gap-1">
                 <div className="h-5 w-12 rounded bg-gray-200" />
+
                 <div className="h-5 w-16 rounded bg-gray-200" />
               </div>
             </div>

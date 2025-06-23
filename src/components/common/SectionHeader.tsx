@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-interface SectionHeaderProps {
+type SectionHeaderProps = {
   title: string;
   description?: string;
   highlighted_text?: string;
@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   title_class_name?: string;
   description_class_name?: string;
   center?: boolean;
-}
+};
 
 const SectionHeader = ({
   title,
