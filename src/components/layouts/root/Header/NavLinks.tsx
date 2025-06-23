@@ -18,9 +18,9 @@ import {
   tentang_sekolah_items,
 } from "@/constants/data";
 
-interface NavLinksProps {
+type NavLinksProps = {
   className?: string;
-}
+};
 
 const NavLinks = ({ className }: NavLinksProps) => {
   return (

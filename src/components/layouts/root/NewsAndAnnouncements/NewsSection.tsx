@@ -11,11 +11,11 @@ import { latest_news } from "@/constants/data";
 
 import NewsCard, { type NewsItem } from "./NewsCard";
 
-interface NewsSectionProps {
+type NewsSectionProps = {
   featured_count?: number;
   other_news_count?: number;
   className?: string;
-}
+};
 
 const NewsSection = ({
   featured_count = 1,

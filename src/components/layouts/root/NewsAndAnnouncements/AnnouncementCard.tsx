@@ -15,10 +15,10 @@ interface AnnouncementItem {
   is_urgent: boolean;
 }
 
-interface AnnouncementCardProps {
+type AnnouncementCardProps = {
   announcement: AnnouncementItem;
   variant?: "full" | "summary";
-}
+};
 
 const AnnouncementCard = ({
   announcement,

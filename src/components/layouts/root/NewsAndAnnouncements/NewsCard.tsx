@@ -21,11 +21,11 @@ export interface NewsItem {
   is_featured: boolean;
 }
 
-interface NewsCardProps {
+type NewsCardProps = {
   news: NewsItem;
   variant?: "featured" | "small";
   priority?: boolean;
-}
+};
 
 const NewsCard = memo(
   ({ news, variant = "small", priority = false }: NewsCardProps) => {

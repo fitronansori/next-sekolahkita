@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-interface FeatureCardProps {
+type FeatureCardProps = {
   id: number;
   title: string;
   description: string;
@@ -19,7 +19,7 @@ interface FeatureCardProps {
   cta_text: string;
   cta_link: string;
   highlights: string[];
-}
+};
 
 const FeatureCard = ({
   id,
