@@ -1,9 +1,9 @@
-import { UserButton } from "@clerk/nextjs";
+import ClientOnlyUserButton from "@/components/common/ClientOnlyUserButton";
 
 const DashboardPage = () => {
   return (
     <div>
-      <UserButton />
+      <ClientOnlyUserButton />
     </div>
   );
 };
