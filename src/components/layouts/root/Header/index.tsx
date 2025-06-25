@@ -1,7 +1,8 @@
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 import Link from "next/link";
 
+import ClientOnlyUserButton from "@/components/common/ClientOnlyUserButton";
 import Logo from "@/components/common/Logo";
 import MobileMenu from "@/components/layouts/root/Header/MobileMenu";
 import NavLinks from "@/components/layouts/root/Header/NavLinks";
@@ -26,7 +27,7 @@ const Header = () => {
                 <Link href="/dashboard">Dashboard</Link>
               </Button>
 
-              <UserButton />
+              <ClientOnlyUserButton />
             </div>
           </SignedIn>
 
