@@ -89,16 +89,3 @@ export const getTeachersPaginated = cache(
     }
   }
 );
-
-// Get single teacher by ID
-export const getTeacherById = cache(async (id: string) => {
-  try {
-    const teacher = await prisma.teacher.findUnique({
-      where: { id },
-    });
-    return teacher;
-  } catch (error) {
-    console.error("Gagal mengambil data guru:", error);
-    throw new Error("Gagal mengambil data guru");
-  }
-});
