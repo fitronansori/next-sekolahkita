@@ -3,10 +3,21 @@
 import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/lib/prisma";
+import { checkRole } from "@/lib/roles";
 
 import { CreateTeacherData, UpdateTeacherData } from "@/types/teacher";
 
 export async function createTeacher(data: CreateTeacherData) {
+  // Check if user has admin role
+  const is_admin = await checkRole("admin");
+
+  if (!is_admin) {
+    return {
+      success: false,
+      error: "Akses ditolak. Hanya admin yang dapat menambahkan data guru.",
+    };
+  }
+
   try {
     const teacher = await prisma.teacher.create({
       data: {
@@ -34,6 +45,16 @@ export async function createTeacher(data: CreateTeacherData) {
 }
 
 export async function updateTeacher(data: UpdateTeacherData) {
+  // Check if user has admin role
+  const is_admin = await checkRole("admin");
+
+  if (!is_admin) {
+    return {
+      success: false,
+      error: "Akses ditolak. Hanya admin yang dapat memperbarui data guru.",
+    };
+  }
+
   try {
     const { id, ...updateData } = data;
     const teacher = await prisma.teacher.update({
@@ -58,6 +79,16 @@ export async function updateTeacher(data: UpdateTeacherData) {
 }
 
 export async function deleteTeacher(id: string) {
+  // Check if user has admin role
+  const is_admin = await checkRole("admin");
+
+  if (!is_admin) {
+    return {
+      success: false,
+      error: "Akses ditolak. Hanya admin yang dapat menghapus data guru.",
+    };
+  }
+
   try {
     await prisma.teacher.delete({
       where: {

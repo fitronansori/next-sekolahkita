@@ -2,13 +2,17 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 import Link from "next/link";
 
+import { checkRole } from "@/lib/roles";
+
 import ClientOnlyUserButton from "@/components/common/ClientOnlyUserButton";
 import Logo from "@/components/common/Logo";
 import MobileMenu from "@/components/layouts/root/Header/MobileMenu";
 import NavLinks from "@/components/layouts/root/Header/NavLinks";
 import { Button } from "@/components/ui/button";
 
-const Header = () => {
+const Header = async () => {
+  const is_admin = await checkRole("admin");
+
   return (
     <header className="bg-background sticky top-0 z-50 w-full border-b">
       <div className="container flex h-16 items-center justify-between">
@@ -23,9 +27,11 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <SignedIn>
             <div className="flex items-center gap-4">
-              <Button variant="outline" asChild>
-                <Link href="/dashboard">Dashboard</Link>
-              </Button>
+              {is_admin && (
+                <Button variant="outline" asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </Button>
+              )}
 
               <ClientOnlyUserButton />
             </div>
